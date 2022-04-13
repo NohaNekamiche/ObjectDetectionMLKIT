@@ -72,11 +72,11 @@ class MainActivity : AppCompatActivity() {
                 override fun onActivityResult(result: ActivityResult?) {
                     val data=result?.data
                     try {
-                        val  photo = data?.data?.let {
+                        imageInput= data?.data?.let {
                             InputImage.fromFilePath(this@MainActivity,
                                 it
                             )
-                        }
+                        }!!
                         img.setImageURI(data?.data)
                         processImage()
 
